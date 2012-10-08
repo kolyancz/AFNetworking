@@ -25,9 +25,11 @@
 
 NSString * const kUserProfileImageDidLoadNotification = @"com.alamofire.user.profile-image.loaded";
 
+#ifdef __MAC_OS_X_VERSION_MIN_REQUIRED
 @interface User ()
 + (NSOperationQueue *)sharedProfileImageRequestOperationQueue;
 @end
+#endif
 
 @implementation User {
 @private
@@ -55,7 +57,7 @@ NSString * const kUserProfileImageDidLoadNotification = @"com.alamofire.user.pro
     return [NSURL URLWithString:_profileImageURLString];
 }
 
-#if __MAC_OS_X_VERSION_MIN_REQUIRED
+#ifdef __MAC_OS_X_VERSION_MIN_REQUIRED
 
 @synthesize profileImage = _profileImage;
 

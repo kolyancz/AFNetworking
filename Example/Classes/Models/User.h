@@ -32,7 +32,7 @@ extern NSString * const kUserProfileImageDidLoadNotification;
 
 - (id)initWithAttributes:(NSDictionary *)attributes;
 
-#if __MAC_OS_X_VERSION_MIN_REQUIRED
+#ifdef __MAC_OS_X_VERSION_MIN_REQUIRED
 @property (nonatomic, strong) NSImage *profileImage;
 #endif
 
